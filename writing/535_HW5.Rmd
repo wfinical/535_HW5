@@ -1,10 +1,11 @@
 ---
 title: "535 Homework 5"
+author: "Will Finical"
 output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(warning = FALSE, error = FALSE, message = FALSE, include = TRUE)
 ```
 
 ## Baltimore Homicides
