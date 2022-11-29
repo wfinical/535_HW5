@@ -51,3 +51,12 @@ fig_df <- Baltimore %>%
                              ~ "Summer"))
 
 ```
+
+```{r freddie grey}
+grey <- homicides %>%
+  filter(victim_last == "GREY" & victim_first == "FREDDIE CARLOS") %>%
+  mutate(date = ymd(reported_date)) %>%
+  select(victim_last, victim_first, date)
+
+```
+
