@@ -37,3 +37,17 @@ Baltimore <- homicides %>%
   ungroup()
 
 ```
+
+```{r figure data}
+fig_df <- Baltimore %>%
+  mutate(month_name = month(month, label = TRUE)) %>%
+  mutate(weather = case_when(month_name == "Jan" | month_name == "Feb" | 
+                               month_name == "Mar" | month_name == "Apr" |
+                               month_name == "Nov" | month_name == "Dec"
+                             ~ "Winter",
+                             month_name == "Jun" | month_name == "Jul" | 
+                               month_name == "Aug" | month_name == "Sep" |
+                               month_name == "May" | month_name == "Oct"
+                             ~ "Summer"))
+
+```
