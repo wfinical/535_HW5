@@ -64,5 +64,9 @@ grey <- homicides %>%
 fig_df %>%
   ggplot(aes(x=month, y=count)) +
   geom_col(aes(fill = weather)) +
-  geom_smooth(span = 0.2, se = FALSE)
+  geom_smooth(span = 0.2, se = FALSE) +
+  scale_fill_manual(values = c("grey88", "lightblue")) +
+  ggtitle("Homicides in Baltimore, MD") +
+  xlab("Date") +
+  ylab("Monthly homicides")
 ```
