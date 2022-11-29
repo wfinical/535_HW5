@@ -1,7 +1,9 @@
 ---
 title: "535 Homework 5"
 author: "Will Finical"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -16,5 +18,22 @@ library(lubridate)
 library(dplyr)
 library(scales)
 library(ggthemes)
+library(readr)
+```
+
+```{r data}
+homicides <- read_csv("homicide-data.csv")
+homicides <- homicides %>%
+  unite("city_name", c("city", "state"), sep = ", ", remove = FALSE)
+```
+
+```{r cleaning}
+Baltimore <- homicides %>%
+  filter(city == "Baltimore") %>%
+  mutate(date = ymd(reported_date)) %>%
+  mutate(month = ym(paste0(year(date), month(date)))) %>%
+  group_by(month) %>%
+  summarise(count = n()) %>%
+  ungroup()
 
 ```
