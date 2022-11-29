@@ -60,3 +60,9 @@ grey <- homicides %>%
 
 ```
 
+```{r plot}
+fig_df %>%
+  ggplot(aes(x=month, y=count)) +
+  geom_col(aes(fill = weather)) +
+  geom_smooth(span = 0.2, se = FALSE)
+```
