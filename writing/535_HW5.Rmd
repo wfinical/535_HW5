@@ -68,5 +68,9 @@ fig_df %>%
   scale_fill_manual(values = c("grey88", "lightblue")) +
   ggtitle("Homicides in Baltimore, MD") +
   xlab("Date") +
-  ylab("Monthly homicides")
+  ylab("Monthly homicides") +
+  theme_dark() +
+  annotate("text", x = as.Date("2013-08-30"), y = 44, 
+           label = "Arrest of Freddie Grey", color = 'white') +
+  geom_vline(xintercept = grey$date, linetype='dashed', color='red', size=2)
 ```
