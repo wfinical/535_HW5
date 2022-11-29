@@ -72,5 +72,8 @@ fig_df %>%
   theme_dark() +
   annotate("text", x = as.Date("2013-08-30"), y = 44, 
            label = "Arrest of Freddie Grey", color = 'white') +
-  geom_vline(xintercept = grey$date, linetype='dashed', color='red', size=2)
+  geom_vline(xintercept = grey$date, linetype='dashed', color='red', size=2) +
+  theme(legend.position= "bottom",
+        legend.spacing.x = unit(0.2, 'cm'),
+        legend.title = element_blank())
 ```
